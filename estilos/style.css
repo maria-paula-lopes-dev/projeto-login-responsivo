@@ -1,0 +1,136 @@
+@charset "UTF-8";
+
+:root{
+    --cor1: #124559;
+    --cor2: #518EA6;
+    --cor3: #93B3BF;
+    --cor4: #D9D4D2;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    min-height: 100vh; /*altura mínima da página é a altura da tela*/
+
+    background-color: var(--cor4);
+}
+
+.main-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /*Se o main não tiver a altura definida ele terá apenas a altura do conteúdo. Se a altura não for definida, o flex center só funciona pro tamanho do elemento e não pra tela toda*/
+    min-height: 100vh;
+}
+
+section.login-container{
+    width: 90%; /*Da largura do pai 'main-container' - 90% da largura do main*/
+    max-width: 370px; /*Mesmo que 90% da tela seja muito grande, o login não pode ultrapassar 400px.*/
+
+    border-radius: 20px 5px;
+    overflow: hidden;
+
+    background-color: var(--cor3);
+    box-shadow: 0 0 25px #00000061;
+
+    transition: width 0.3s, height 0.3s;
+    -moz-transition-timing-function: ease;
+}
+
+div#imagem-container{
+    height: 200px;
+
+    background: var(--cor3) url(../imagens/imagem-login-mobile.png) center no-repeat;
+    background-size: cover;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 15px;
+}
+
+div.campos{
+    display: flex;
+    align-items: center;
+
+    height: 40px;
+
+    border-radius: 8px;
+    background-color: var(--cor1);
+    box-shadow: 0 0 25px #00000061;
+}
+
+span{
+    padding: 0 10px;
+
+    font-size: 1.5em;
+    color: var(--cor4);
+}
+
+label{
+    display: none;
+}
+
+input{
+    flex: 1;
+
+    min-width: 0; /*Impede que estique a div pai e quebre*/ 
+    height: 100%;
+
+    padding: 0 10px;
+
+    border: none;
+    border-radius: 8px 0 0 8px;
+    background-color: var(--cor4);
+
+    font-size: 1em;
+    outline: none; /*Remove borda ao clicar*/
+}
+
+button.btn-login{
+    width: 150px;
+    height: 35px;
+    margin-top: 10px;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: var(--cor1);
+    box-shadow: 0 0 25px #00000061;
+
+    color: var(--cor3);
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+
+    cursor: pointer;
+}
+
+.btn-login:hover{
+    background-color: var(--cor2);
+    color: var(--cor4);
+}
+
+a#link{
+    margin: 10px 0 20px;
+
+    color: var(--cor1);
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+#link:hover{
+    color: var(--cor4);
+}
